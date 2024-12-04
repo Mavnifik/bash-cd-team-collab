@@ -1,0 +1,106 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* White text */
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Full height */
+}
+
+/* Header */
+header {
+    background-color: #1db954; /* Spotify green */
+    padding: 20px;
+    text-align: center;
+}
+
+/* Container for Sidebar and Main */
+.container {
+    display: flex;
+    flex: 1; /* Take remaining space */
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px; /* Fixed width for sidebar */
+    background-color: #282828; /* Darker gray for sidebar */
+    padding: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+    border-bottom:#121212 solid;
+    padding-bottom: 1rem;
+}
+
+.sidebar ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.sidebar ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Main content */
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Sections */
+section {
+    margin-bottom: 40px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #1a1a1a;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #282828;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #333;
+}
+
+th {
+    background-color: #1db954;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #333;
+}
+
+tr:hover {
+    background-color: #444;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1db954; /* Spotify green */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

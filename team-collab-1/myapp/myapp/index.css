@@ -1,0 +1,263 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif; /* Modern, clean font */
+}
+
+/* Body and General Styles */
+body {
+  background-color: #121212; /* Dark background like Spotify */
+  color: #e0e0e0; /* Light gray text for contrast */
+  line-height: 1.6;
+  font-size: 16px;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+h1, h2, p {
+  margin: 0;
+}
+
+/* Header */
+header {
+  background-color: #181818; /* Dark gray background */
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  border-bottom: 1px solid #333;
+  position: relative; /* Added for absolute positioning of the login button */
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #1DB954; /* Neon green accent color */
+  font-weight: 700;
+  text-shadow: 0 0 10px #1DB954, 0 0 20px #1DB954; /* Neon glow effect */
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #bbb;
+  margin-top: 0.5rem;
+}
+
+/* Login Button Styling */
+.login-button {
+  position: absolute;
+  top: 20px; /* Adjust distance from top */
+  right: 20px; /* Adjust distance from right */
+  background-color: #1DB954;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #17b34d;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #1DB954;
+}
+
+.login-button:focus {
+  outline: 3px solid #17b34d;
+}
+
+/* Button Styles */
+button {
+  background-color: #1DB954;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 2rem;
+}
+
+button:hover {
+  background-color: #17b34d;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #1DB954; /* Neon glow on hover */
+}
+
+button:focus {
+  outline: 3px solid #17b34d;
+}
+
+/* Main Layout */
+main {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.two-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.song-list, .song-analysis {
+  background-color: #181818; /* Dark gray containers */
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.song-list:hover, .song-analysis:hover {
+  transform: scale(1.03); /* Scale effect on hover */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6); /* Stronger shadow on hover */
+}
+
+.song-list h2, .song-analysis h2 {
+  font-size: 1.6rem;
+  color: #e0e0e0; /* Light text */
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.album_container {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  align-items: center;
+}
+
+.album_cover img {
+  width: 80px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.album_cover img:hover {
+  transform: scale(1.05);
+}
+
+.album {
+  flex: 1;
+}
+
+.album_title {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #fff; /* White text for album titles */
+  margin-bottom: 0.5rem;
+}
+
+.album_singer {
+  font-size: 1rem;
+  color: #bbb; /* Light gray text */
+}
+
+/* Input Section */
+.input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input {
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background-color: #232323; /* Dark background for input */
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: #1DB954; /* Neon green border on focus */
+}
+
+input::placeholder {
+  color: #777;
+}
+
+/* Result Section */
+.result-section {
+  display: none;
+  padding: 2rem;
+  background-color: #181818;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 3rem;
+}
+
+.result-section:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+.result-section h2 {
+  font-size: 1.8rem;
+  color: #1DB954; /* Neon green */
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px #1DB954, 0 0 20px #1DB954; /* Neon glow effect */
+}
+
+.stats ul {
+  list-style: none;
+  padding: 0;
+}
+
+.stats li {
+  color: #bbb; /* Light gray text */
+  margin-bottom: 0.5rem;
+}
+
+.stats li strong {
+  color: #fff; /* Bolded text for labels */
+}
+
+/* Lyrics Section */
+#lyrics-content {
+  margin-top: 1.5rem;
+  color: #bbb;
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: #181818;
+  color: #888;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.6);
+}
+
+footer p {
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .two-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .song-list {
+    margin-bottom: 2rem;
+  }
+}
