@@ -1,0 +1,363 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif; /* Modern, clean font */
+}
+
+/* Body and General Styles */
+body {
+  background: linear-gradient(135deg, #121212, #1e1e1e); /* Gradient background for depth */
+  color: #e0e0e0; /* Light gray text for contrast */
+  line-height: 1.6;
+  font-size: 16px;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: background 0.5s ease;
+}
+
+/* Header */
+header {
+  background: linear-gradient(135deg, #181818, #1e1e1e); /* Gradient background */
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  border-bottom: 1px solid #333;
+  position: relative;
+  transition: background 0.3s ease;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #1DB954; /* Neon green accent color */
+  font-weight: 700;
+  text-shadow: 0 0 10px #1DB954, 0 0 20px #1DB954; /* Neon glow effect */
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #bbb;
+  margin-top: 0.5rem;
+}
+
+/* Login Button Styling */
+.login-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #1DB954;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #17b34d;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #1DB954;
+}
+
+.login-button:focus {
+  outline: 3px solid #17b34d;
+}
+
+/* Button Styles */
+button {
+  background-color: #1DB954;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 2rem;
+}
+
+button:hover {
+  background-color: #17b34d;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #1DB954;
+}
+
+button:focus {
+  outline: 3px solid #17b34d;
+}
+
+/* Main Layout */
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  gap: 2rem; /* Added gap for better spacing */
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Two Columns Layout */
+.two-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Song List and Song Analysis Styles */
+.song-list, .song-analysis {
+  background-color: #181818; /* Dark gray containers */
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.song-list:hover, .song-analysis:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6); /* Stronger shadow on hover */
+}
+
+.song-list h2, .song-analysis h2 {
+  font-size: 1.6rem;
+  color: #e0e0e0; /* Light text */
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* Album Container Styling */
+.album_container {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  align-items: center;
+}
+
+.album_cover img {
+  width: 80px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.album_cover img:hover {
+  transform: scale(1.05);
+}
+
+.album {
+  flex: 1;
+}
+
+.album_title {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.album_singer {
+  font-size: 1rem;
+  color: #bbb;
+}
+
+/* Input Section */
+.input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%; /* Make sure it takes full width */
+}
+
+input {
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background-color: #232323; 
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  width: 100%; /* Ensure inputs take full width */
+}
+
+input:focus {
+  border-color: #1DB954; /* Neon green border on focus */
+}
+
+input::placeholder {
+  color: #777;
+}
+
+/* Result Section */
+.result-section {
+  display: none;
+  padding: 3rem;
+  background-color: #181818;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 3rem;
+  width: 100%;
+}
+
+.result-section:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+.result-section h2 {
+  font-size: 1.8rem;
+  color: #1DB954; /* Neon green */
+  margin-bottom: 3rem;
+  text-shadow: 0 0 10px #1DB954, 0 0 20px #1DB954;
+}
+
+.stats ul {
+  list-style: none;
+  padding: 0;
+}
+
+.stats li {
+  color: #bbb;
+  margin-bottom: 0.8rem; /* Increased margin between result data */
+}
+
+.stats li strong {
+  color: #fff;
+}
+
+/* Lyrics Section */
+#lyrics-content {
+  margin-top: 3rem; /* Adjusted top margin */
+  color: #bbb;
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 400;
+  padding-top: 1.5rem; /* Padding top for better alignment */
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: #181818;
+  color: #888;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.6);
+}
+
+footer p {
+  font-size: 0.9rem;
+}
+
+/* Emotion Chart Container */
+.emotion-chart-container {
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.emotion-chart {
+  width: 80%;
+  max-width: 600px;
+  background-color: #181818;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+/* Music Attributes Section */
+.music-attributes {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2rem;
+  gap: 2rem;
+  animation: fadeInUp 1s ease-out;
+}
+
+.music-attributes .attribute {
+  background-color: #232323;
+  padding: 1.5rem;
+  border-radius: 8px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  perspective: 1000px; /* Adding 3D perspective */
+}
+
+.music-attributes .attribute:hover {
+  transform: rotateY(180deg); /* Flip effect on hover */
+}
+
+.music-attributes .attribute h3 {
+  font-size: 1.5rem;
+  color: #1DB954;
+  margin-bottom: 0.5rem;
+}
+
+.music-attributes .attribute p {
+  font-size: 1.2rem;
+  color: #bbb;
+}
+
+/* Progress Bar */
+.progress-bar-container {
+  width: 100%;
+  height: 10px;
+  background-color: #333;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%; /* Default width, will be dynamically changed */
+  background-color: #1DB954;
+  transition: width 0.3s ease;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .two-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .music-attributes {
+    flex-direction: column;
+  }
+}
